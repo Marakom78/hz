@@ -1,0 +1,17 @@
+from services.db import Db
+
+class Article:
+  __tablename__ = 'table1'
+  id = None
+  author_id = None
+  name = None
+  text = None
+  created_at = None
+
+  def find_all(cls):
+    db = Db()
+    return db.query("SELECT * FROM 'table1'", {}, cls)
+
+  def get_by_id(id, cls):
+    db = Db()
+    return db.query(f"SELECT * FROM 'articles' WHERE id = {id}", {}, cls)[0]
