@@ -1,0 +1,34 @@
+Для сервера, развернутого на Linux сделать подключение по https://
+
+Материал для изучения: https://mnorin.com/tls-ssl-neobhodimy-j-minimum-znanij.html
+
+
+1. Создать корневой сертификат с помощью программы openssl
+
+1.1  Создаем ключ корневого сертификата 
+openssl genrsa -out CA-private-key.key 4096
+
+1.2  Создаем запрос на подпись корневого сертификата 
+openssl req -new -key CA-private-key.key -out CA-certificate-signing-request.csr
+
+Заполняем информацию о сертификате. Главное поле CN(обязательное)
+
+1.3  Подписываем сертификат своим же ключом 
+openssl x509 -req -in CA-certificate-signing-request.csr -signkey CA-private-key.key -passin pass:password -days 1 -out CA-self-signed-certificate.pem
+
+2. Создать сертификат сервера
+
+2.1  Создаем ключ сертификата сервера
+openssl genrsa -out Server-private-key.key 4096
+
+2.2  Создаем запрос на подпись сертификата сервера. 
+В CN указываем адрес сайта - например localhost
+
+openssl req -new -key Server-private-key.key -out Server-certificate-signing-request.csr  
+
+2.3  Подписываем сертификат сервера ключом корневого сертификата
+
+openssl x509 -req -in Server-certificate-signing-request.csr -CA CA-self-signed-certificate.pem -CAkey CA-private-key.key  -CAcreateserial -days 365 -out Server-certificate.pem
+
+3. Настроить nginx на работу с сертификатом (см материал)
+https://labex.io/ru/tutorials/comptia-https-with-a-self-signed-certificate-on-nginx-in-linux-592820

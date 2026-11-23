@@ -1,0 +1,12 @@
+1. Выбрать хостинг, работающий с питоном (sweb.ru, timeweb.com).
+2. Настроить версию backend (на Sweb - apache2.4 + python wsgi).
+3. Положить в папку public_html файл .htaccess (приложен к заданию)
+4. Прочитать материалы: 
+	https://help.sweb.ru/zapusk-skripta-python_150.html 
+	https://help.sweb.ru/ustanovka-flask-na-virtual6nom-hostinge_1282.html
+5. Установить виртуальное окружение.
+6. Установить зависимости.	
+7. В файл app.py добавить путь к виртуальному окружению и текущей папке
+	import sys 
+	sys.path.append('/home/...venv/lib/python3.11/site-packages/')
+	sys.path.append(os.path.dirname(os.path.abspath(__file__)))

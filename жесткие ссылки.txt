@@ -1,0 +1,3 @@
+Материал по жестким и символьным ссылкам:
+
+https://losst.pro/simvolicheskie-i-zhestkie-ssylki-linux

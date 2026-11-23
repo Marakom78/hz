@@ -1,0 +1,37 @@
+Исследуем XSS инъекции
+в приложении DVWA или на вирт машине Dojo
+Также возможно подобное тестирование в приложении bWapp (на вирт машине bee-box)
+
+
+Прочитать материал
+
+https://htmlacademy.ru/blog/js/xss
+
+
+Повторить тестирование по материалу:
+1 задание XSS Reflected 
+https://timcore.ru/2021/06/28/2-issledovanie-reflected-xss-uroven-low/
+https://timcore.ru/2021/06/28/3-issledovanie-reflected-xss-srednij-uroven/
+https://timcore.ru/2021/05/03/30-ujazvimost-dvwa-xss-reflected-uroven-high/
+
+2 задание XSS Stored
+https://timcore.ru/2021/05/03/31-ujazvimost-dvwa-xss-stored-uroven-low/
+https://timcore.ru/2021/05/04/32-ujazvimost-dvwa-xss-stored-uroven-medium/
+
+3 задание XSS DOM
+https://timcore.ru/2021/07/01/7-issledovanie-ujazvimosti-dom-based-xss/
+Данное задание можно выполнить в Linux (если соединение блокирут антивирус)
+Установить сертификат BurpSuite в доверенные браузеру можно по инструкции
+https://codeby.net/threads/3-burp-suite-ustanovlenie-doverija-po-https.66944/ 
+ссылка из статьи: http://xss-doc.appspot.com/demo/3
+
+Работа по одному или  в паре:
+
+1. Исследовать свой сайт или сайт одногруппника на уязвимость, позволяющую провести XSS-атаку
+
+2. Дать рекомендацию по защите сайта от инъекции JS кода.
+
+3. Исправить свой сайт согласно данной рекомендации.
+
+
+Внести ход работы и выводы в общий отчет по лаб работе.

@@ -1,0 +1,29 @@
+Исследуем СSRF уязвимость.
+https://habr.com/ru/companies/oleg-bunin/articles/412855/
+https://www.dev-notes.ru/articles/security/csrf/
+
+Как предотвратить уязвимость:
+https://www.dev-notes.ru/articles/security/csrf-preventing/
+
+
+Задание 1.
+В разработанном MVC приложении проэксплуатировать СSRF уязвимость.
+1.1 Метод GET - удалить статью от имени пользователя.
+1.2 Метод POST - изменить статью пользователя 
+1.3 Метод POST - создать новую статью 
+
+Задание 2. На виртуальной машине bee-box проэксплуатировать СSRF уязвимости.
+CSRF (Change Password)
+CSRF (Change Secret)
+CSRF (Transfer Amount)
+
+
+Задание 3.
+
+В разработанном MVC приложении реализовать защиту от СSRF атаки.
+
+1.1 Метод POST.
+1.2 Метод GET. 
+  
+
+Внести ход работы и выводы по защите от СSRF уязвимости в общий отчет по лаб работе.

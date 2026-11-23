@@ -1,0 +1,68 @@
+
+1. На сайте с учебным фреймворком сделать Api для получения статьи:
+   1.1 В файле с роутами сделать роут для получения статьи через api        r"^/api/article/(\d+)$" : [ArticlesApiController, ArticlesApiController.view]
+   1.2 Сделать контроллер для Api: controllers/api/articles_api_controller.py  и в нем действие view
+   взять файл articles_api_controller.py в обмене
+   1.3 Добавить метод display_json в файл views/view.py:
+ 
+       def display_json(self, data, code = 200):
+         return json.dumps(data)
+
+   1.4 Вывести cтатью на страницу по адресу /html/one.html  (страница должна находиться в папке assets)  без  перезагрузки страницы с помощью fetch JS
+
+2. Получение всех статей.
+   2.1 Сделать api для получения всех статей сайта /api/articles/.
+   2.2 Вывести все статьи на страницу по адресу /html/index.html без  перезагрузки страницы (страница должна находиться в папке assets)
+
+3. Удаление статей.
+   3.1 Сделать api для удаления статьи /api/articles/1/delete
+   3.2 На странице со всеми статьями index.html добавить каждой статье кнопку удалить. Реализовать удаление статьи по кнажатию кнопки через api.
+
+4. Добавление статьи.
+   4.1 Сделать api для добавления статьи /api/articles методом Post
+   для этого сделайте в файле routes.py возможность указать каждому роуту несколько методов и, соответственно действий в контроллерах. Например:
+   r"^/api/articles$" : [ArticlesApiController,  {'GET' : ArticlesApiController.index, 'POST': ArticlesApiController.add}]
+
+   4.2 Добавьте в app.py возможность исользовать несколько методов запроса на один адрес (начало метода handle_request):
+    def handle_request(self, request):
+        response = Response()
+
+        controller = SiteController(request)
+        api = False
+
+        try:
+            result = self.find_handler_re(request_path=request.path)
+
+            if result is None:
+                raise NotFoundException('Страница не найдена')
+
+            handler, params = result
+            controller = handler[0](request)
+
+            method = request.method
+            if isinstance(handler[1], dict):
+                api = True
+                if method in handler[1]:
+                    action = handler[1][method]
+                else:
+                    raise InvalidMethodException('Method not support')
+            else:
+                action = handler[1]
+
+            # action = handler[1] 
+            action(controller, request, response, *params)
+
+   Дальше идет  обработка исключений, добавьте исключение InvalidMethodException в этот список и создайте этот класс исключения.
+
+   4.3 Сделайте метод add в articles_api_controller.py (можно подсмотрtть в файле add.py при необходимости). В модели article пока закомментируйте обработку изображений.
+
+   4.4 На странице со всеми статьями index.html в начале сделать форму для добавления статьи. Реализовать добавление статьи по нажатию кнопки в форме через api. Пока у нас нет авторизации - пользователя укажем с любым id из базы данных.
+
+5. Редактирование статьи.
+   5.1 Сделать api для редактирования статьи /api/articles/1 методом PATСH или PUT
+   5.2 На странице index.html сделать кнопки "Редактировать" у каждой статьи. 
+   При нажатии кнопки в форме редактирования (та же форма, что и для добавления) статьи появляется информация из статьи.
+   После редактирования, при нажатии кнопки в форме статья изменяется через api.
+
+6. Удаление статей - изменение конечной точки.
+   Сделайте так, чтобы статья удалялась по адресу /api/articles/1 методом DELETE 

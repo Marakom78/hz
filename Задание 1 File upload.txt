@@ -1,0 +1,22 @@
+Материалы:
+https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload
+https://hackware.ru/?p=1304
+Методы обхода фильтров по расширению при загрузке файлов
+https://www.securitylab.ru/analytics/495786.php
+
+
+1. Проверить, есть ли на сайте загрузка файлов. Если нет - добавить. Файл можно загружать, например, при регистрации пользователя (аватар) или создании статьи (изображение к статье). 
+
+2. Исследовать свой сайт на наличие уязвимости Unrestricted File Upload.
+В отчете указать найденные уязвимости включая все найденные уязвимые роуты (конечные точки)
+Дать рекомендации по исправлению уязвимости Unrestricted File Upload
+
+3. В приложении bWapp (на машине bee box) исследовать уязвимости Unrestricted File Upload на уровнях Low и Medium
+
+4. В приложении DVWA протестировать FileUpload на уровне Low и Medium. Материал - https://hackware.ru/?p=1304
+Реализовать Upload на уровне High
+
+5. Исправить свой сайт, защитив его от Unrestricted File Upload. 
+
+  
+

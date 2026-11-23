@@ -1,0 +1,36 @@
+Исследуем HTML инъекции
+в приложении bWapp ( online bwapp.hakhub.net или на вирт машине bee-box)
+
+
+1.  HTML Injection - Stored (Хранимая HTML инъекция)
+
+1.1 Повторить тестирование по материалу (только до пункта Отраженный HTML):
+https://habr.com/ru/companies/alexhost/articles/530862/
+
+1.2 Проверить наличие уязвимости Хранимая HTML инъекция в своем приложении
+(если уязвимость на обнаружена - определить, какой модуль в приложении отвечает за эту защиту).
+
+1.3 Изучить методы защиты по материалам сети интернет.
+
+1.4 Исправить свой сайт, заэкранировать вывод на экран опасных символов, приводящих к выполнению HTML кода
+
+Внести ход работы и выводы в общий отчет по лаб работе
+
+2.  HTML Injection - Reflected
+
+2.1 Самостоятельно протестировать HTML Reflected (Get) уровень Low (в приложении bWapp).
+
+Протестировать различные виды html инъекций на уровне low и medium по инструкциям:
+2.2 Инструкция HTML Reflected (Get) уровень Medium
+https://timcore.ru/2021/05/13/3-ujazvimost-html-injection-reflected-get-uroven-medium
+
+2.3 Уязвимость HTML Injection — Reflected (POST) уровень (Low)
+https://timcore.ru/2021/05/13/4-ujazvimost-html-injection-reflected-post-uroven-low
+
+2.4 Проверить наличие уязвимости Reflected (Отраженный) HTML, исправить свой сайт, защитив его от HTML Injection — Reflected
+
+3. Current url
+Повторить исследование
+https://timcore.ru/2021/05/14/6-ujazvimost-html-injection-reflected-current-url-uroven-low
+
+4. Все действия отразить в отчете

@@ -1,0 +1,18 @@
+Материалы:
+https://www.securitylab.ru/analytics/542394.php
+https://owasp.org/Top10/A01_2021-Broken_Access_Control/
+https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html
+
+
+
+
+1. Исследовать свой сайт (или сайт одногруппника) на наличие уязвимости IDOR
+В отчете указать найденные уязвимости включая все найденные уязвимые роуты (конечные точки)
+Дать рекомендаци по исправлению уязвимости IDOR 
+
+2. В приложении bWapp (на машине bee box) исследовать уязвимости IDOR - раздел A4
+
+3. Исправить свой сайт, защитив его от IDOR. 
+
+  
+
